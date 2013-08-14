@@ -1,0 +1,29 @@
+<div class="box post">
+  <p><input type="text" placeholder="Create a new Todo." name="title" class="submit" ng-enter="newTodo($event)"></p>
+</div>
+
+<div class="box todos">
+  <h2 class="box">待办事项</h2>
+  <ul>
+    <li class="item" ng-repeat="x in list | orderBy:'date':true">
+      <span ng-class="itemClass(x.finished)">{{x.title}}</span>
+      <span class="date">({{x.date | date:'yyyy-MM-dd HH:mm:ss'}})</span>
+      <a href="" ng-click="gotoEdit(x)">编辑</a>
+      <a href="" ng-show="! x.finished" ng-click="itemFinished(x)">完成</a>
+      <a href="" ng-show="x.finished" ng-click="itemRenew(x)">恢复</a>
+      <a href="" ng-click="itemDelete(x)">删除</a>
+    </li>
+    <!-- <li >
+      <span class="del">安装mongoskin模块，npm install mongoskin</span>
+      <span class="date">(Thu Mar 14 2013 04:28:59)</span>
+      <a href="">完成</a>
+      <a href="">删除</a>
+    </li>
+    <li class="item">
+      <span class="new">npm install mongoskin</span>
+      <span class="date">(Thu Mar 14 2013 04:28:59)</span>
+      <a href="">完成</a>
+      <a href="">恢复</a>
+    </li> -->
+  </ul>
+</div>
