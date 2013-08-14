@@ -17,7 +17,7 @@ angular.module('myApp.directives', []).
         // console.log($event)
         // console.log(attrs.ngEnter)
 
-        if($event.which === 13) {
+        if($event.keyCode === 13) {
 
           // set event scope
           scope.$event = $event
